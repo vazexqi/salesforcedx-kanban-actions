@@ -1,0 +1,22 @@
+name: 'Project Card Move Checker'
+description: 'Checks if a project card has been move from columnA to columnB in a case-insensitive manner'
+author: 'Nick Chen'
+inputs:
+  fromColumnId:
+    description: 'The id of the column from the workflow event'
+    required: true
+  fromColumnName:
+    description: 'The name of the column that you were expecting'
+    required: true
+  toColumnId:
+    description: 'The id of the column from the workflow event'
+    required: true
+  toColumnName:
+    description: 'The name of the column that you were expecting'
+    required: true
+outputs:
+  isMatch:
+  description: 'Whether the column was moved as expected'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
