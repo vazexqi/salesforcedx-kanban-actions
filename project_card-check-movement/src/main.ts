@@ -6,6 +6,7 @@ const INPUT_FROMCOLUMNNAME = 'fromColumnName';
 const INPUT_TOCOLUMNID = 'toColumnId';
 const INPUT_TOCOLUMNNAME = 'toColumnName';
 const OUTPUT_ISMATCH = 'isMatch';
+const TOKEN = 'token';
 
 async function run() {
   try {
@@ -14,7 +15,12 @@ async function run() {
     const toColumnId = (core.getInput(INPUT_TOCOLUMNID) as any) as number;
     const toColumnName = core.getInput(INPUT_TOCOLUMNNAME);
 
-    const myToken = core.getInput('myToken');
+    core.debug(`fromColumnId: ${fromColumnId}`);
+    core.debug(`fromColumnName: ${fromColumnName}`);
+    core.debug(`toColumnId: ${toColumnId}`);
+    core.debug(`toColumnName: ${toColumnName}`);
+
+    const myToken = core.getInput(TOKEN);
     const octokit = new github.GitHub(myToken);
     const fromColumn = await octokit.projects.getColumn({
       column_id: fromColumnId

@@ -2,6 +2,9 @@ name: 'Project Card Move Checker'
 description: 'Checks if a project card has been move from columnA to columnB in a case-insensitive manner'
 author: 'Nick Chen'
 inputs:
+  token:
+    description: 'GitHub token'
+    required: true
   fromColumnId:
     description: 'The id of the column from the workflow event'
     required: true
