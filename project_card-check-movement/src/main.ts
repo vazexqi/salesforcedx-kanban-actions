@@ -54,4 +54,6 @@ async function run() {
   }
 }
 
+core.debug('BEFORE');
 run();
+core.debug('AFTER');
