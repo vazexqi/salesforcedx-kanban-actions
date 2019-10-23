@@ -1,0 +1,28 @@
+name: 'PR Creator'
+description: 'Creates a PR based on the pushed branch locally'
+author: 'Nick Chen'
+inputs:
+  token:
+    description: 'GitHub token'
+    required: true
+  owner:
+    description: 'Repository owner'
+    required: true
+  repo:
+    description: 'Repository'
+    required: true
+  title:
+    description: 'The title of the PR'
+    required: true
+  body:
+    description: 'The message in the PR body'
+    required: true
+  head:
+    description: 'The name of the branch where your changes are implemented'
+    required: true
+  base:
+    description: 'The name of the branch you want the changes pulled into'
+    required: true
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
