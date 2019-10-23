@@ -42,6 +42,7 @@ function run() {
             if (fromColumn.data.name.toUpperCase() !== fromColumnName.toUpperCase()) {
                 core.debug(`${fromColumnName.toUpperCase()} doesn't match with ${fromColumn.data.name.toUpperCase}`);
                 core.setOutput(OUTPUT_ISMATCH, '0');
+                return;
             }
             const toColumn = yield octokit.projects.getColumn({
                 column_id: toColumnId
@@ -49,6 +50,7 @@ function run() {
             if (toColumn.data.name.toUpperCase() !== toColumnName.toUpperCase()) {
                 core.debug(`${toColumnName.toUpperCase()} doesn't match with ${toColumn.data.name.toUpperCase}`);
                 core.setOutput(OUTPUT_ISMATCH, '0');
+                return;
             }
             core.setOutput(OUTPUT_ISMATCH, '1');
         }
@@ -57,6 +59,4 @@ function run() {
         }
     });
 }
-core.debug('BEFORE');
 run();
-core.debug('AFTER');

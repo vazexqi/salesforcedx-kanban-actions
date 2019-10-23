@@ -33,6 +33,7 @@ async function run() {
         }`
       );
       core.setOutput(OUTPUT_ISMATCH, '0');
+      return;
     }
 
     const toColumn = await octokit.projects.getColumn({
@@ -46,6 +47,7 @@ async function run() {
         }`
       );
       core.setOutput(OUTPUT_ISMATCH, '0');
+      return;
     }
 
     core.setOutput(OUTPUT_ISMATCH, '1');
@@ -54,6 +56,4 @@ async function run() {
   }
 }
 
-core.debug('BEFORE');
 run();
-core.debug('AFTER');
