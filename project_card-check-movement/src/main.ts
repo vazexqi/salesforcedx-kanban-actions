@@ -32,7 +32,7 @@ async function run() {
           fromColumn.data.name.toUpperCase
         }`
       );
-      core.setOutput(OUTPUT_ISMATCH, '0');
+      core.setOutput(OUTPUT_ISMATCH, 'false');
       return;
     }
 
@@ -46,11 +46,11 @@ async function run() {
           toColumn.data.name.toUpperCase
         }`
       );
-      core.setOutput(OUTPUT_ISMATCH, '0');
+      core.setOutput(OUTPUT_ISMATCH, 'false');
       return;
     }
 
-    core.setOutput(OUTPUT_ISMATCH, '1');
+    core.setOutput(OUTPUT_ISMATCH, 'true');
   } catch (error) {
     core.setFailed(error.message);
   }
