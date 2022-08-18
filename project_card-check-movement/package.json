@@ -8,7 +8,7 @@
   "author": "Nick Chen",
   "license": "BSD-3",
   "dependencies": {
-    "@actions/core": "^1.0.0",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^1.0.0"
   },
   "devDependencies": {
